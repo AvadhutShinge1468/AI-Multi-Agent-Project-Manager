@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Multi-Agent Project Manager</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>🤖 AI Multi-Agent Project Manager</h1>
+        <p>Seven specialized agents analyze, plan, schedule, test, assess risk and track your software project.</p>
+    </header>
+
+    <section class="input-card">
+        <label for="description">Project Description</label>
+        <textarea id="description" placeholder="Example: Build an online examination system with student login, admin panel, questions, timer and automatic result generation."></textarea>
+        <button onclick="analyzeProject()">🚀 Analyze Project</button>
+        <div id="loading" class="loading hidden">Agents are working...</div>
+        <div id="error" class="error"></div>
+    </section>
+
+    <section id="dashboard" class="hidden">
+        <div class="agent-grid" id="agents"></div>
+
+        <div class="stats">
+            <div class="stat"><span>Total Tasks</span><b id="totalTasks">0</b></div>
+            <div class="stat"><span>Completed</span><b id="completedTasks">0</b></div>
+            <div class="stat"><span>Pending</span><b id="pendingTasks">0</b></div>
+            <div class="stat"><span>Progress</span><b id="percentage">0%</b></div>
+            <div class="stat"><span>High Risks</span><b id="highRisks">0</b></div>
+            <div class="stat"><span>Health</span><b id="health">-</b></div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h2>📋 Requirements</h2>
+                <h3>Modules</h3>
+                <ul id="modules"></ul>
+                <h3>Functional Requirements</h3>
+                <ul id="functional"></ul>
+                <h3>Non-Functional Requirements</h3>
+                <ul id="nonfunctional"></ul>
+            </div>
+
+            <div class="card">
+                <h2>🧠 Development Plan</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Task</th><th>Days</th><th>Priority</th><th>Status</th></tr></thead>
+                        <tbody id="tasks"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📅 Schedule</h2>
+                <p><b>Total estimated days:</b> <span id="totalDays"></span></p>
+                <p><b>Estimated completion:</b> <span id="completion"></span></p>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Task</th><th>Start</th><th>End</th></tr></thead>
+                        <tbody id="schedule"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>🧪 Testing Plan</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Module</th><th>Test Case</th><th>Status</th></tr></thead>
+                        <tbody id="tests"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>📊 Risk Analysis</h2>
+                <div class="table-wrap">
+                    <table>
+                        <thead><tr><th>Risk</th><th>Probability</th><th>Impact</th><th>Score</th><th>Mitigation</th></tr></thead>
+                        <tbody id="risks"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
